@@ -1,7 +1,7 @@
 Router#show run
 Building configuration...
 
-Current configuration : 799 bytes
+Current configuration : 819 bytes
 !
 version 15.1
 no service timestamps log datetime msec
@@ -23,7 +23,7 @@ no ipv6 cef
 !
 !
 !
-license udi pid CISCO2901/K9 sn FTX1524N62S-
+license udi pid CISCO2901/K9 sn FTX15246UK4-
 !
 !
 !
@@ -43,7 +43,7 @@ spanning-tree mode pvst
 !
 !
 interface GigabitEthernet0/0
- ip address 192.168.2.1 255.255.255.0
+ ip address 192.168.1.1 255.255.255.0
  duplex auto
  speed auto
 !
@@ -54,7 +54,8 @@ interface GigabitEthernet0/1
  shutdown
 !
 interface Serial0/3/0
- ip address 100.0.0.2 255.0.0.0
+ ip address 100.0.0.1 255.0.0.0
+ clock rate 2000000
 !
 interface Serial0/3/1
  no ip address
@@ -66,7 +67,7 @@ interface Vlan1
  shutdown
 !
 ip classless
-ip route 192.168.1.0 255.255.255.0 Serial0/3/0 
+ip route 192.168.2.0 255.255.255.0 Serial0/3/0 
 !
 ip flow-export version 9
 !
